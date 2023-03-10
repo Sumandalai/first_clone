@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b16c96748f.js" crossorigin="anonymous"></script>
+    <title>using css grid</title>
+    <style>
+        body {
+            margin: 1px;
+            background-color: beige;
+            display: grid;
+            grid-template-rows: 50px 100% 50px;
+        }
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border: 2px black;
+            position: sticky;
+            top: 0;
+            background-color: #b87fd9cf;
+        }
+        .secondgroup {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .item {
+            padding: 5px;
+        }
+        main {
+            width: 90%;
+            align-self: center;
+            justify-self: center;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .item2:nth-of-type(1) {
+            /* background-color: aqua; */
+            grid-column: 1/5;
+        }
+        .item2:nth-of-type(6) {
+            /* background-color: aqua; */
+            grid-column: 1/5;
+        }
+        .item2:nth-of-type(7) {
+            grid-column: 1/5;
+        }
+        .item3 {
+            text-align: center;
+        }
+        .item2 {
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        .colcontainer {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .colcircle:nth-of-type(1) {
+            grid-column: 1/span 2;
+            justify-self: center;
+        }
+        .colcircle:nth-of-type(6) {
+            grid-column: 1/span 2;
+            justify-self: center;
+        }
+        .box3 {
+            text-align: center;
+        }
+        a {
+            color: black;
+            padding: 5px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .container2 {
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .box4:nth-of-type(1) {
+            background-color: rgb(19, 207, 104);
+            border: 2px solid black;
+            width: 280px;
+        }
+        .box4:nth-of-type(2) {
+            background-color: blueviolet;
+            border: 2px solid black;
+            width: 300px;
+        }
+        .box4:nth-of-type(3) {
+            background-color: rgb(241, 9, 241);
+            border: 2px solid black;
+        }
+        @media (max-width:850px) {
+            .colcircle:nth-of-type(1) {
+                grid-column: 1/span 1;
+
+            }
+            .colcircle:nth-of-type(6) {
+                grid-column: 1/span 1;
+                justify-self: unset;
+            }
+            .colcontainer {
+                grid-template-columns: 1fr;
+            }
+        }
+        .foot {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        .slideshow-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+        .mySlides {
+            display: none;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active,.dot:hover {
+            background-color: #717171;
+        }
+        img {
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#first" style="font-size: 30px;margin-left: 24px;margin-top: 6px" ; class="first">Front-end
+            Practice</a>
+        <div class="secondgroup" style="margin-top: 8px;margin-right: 22px;font-size: 20px;">
+            <div class="item"> <a href="#home">Home</a></div>
+            <div class="item"><a href="#project" onclick="nightmode()">NIGHT MODE</a></div>
+            <div class="item"><a href="#faq">FAQ</a></div>
+            <div class="item"><a href="#newsletter">Newsletter</a></div>
+            <div class="item"><a href="#contact">contact</a></div>
+        </div>
+    </header>
+    <main>
+        <div class="item2 item3">
+            <h1>MONGRAM</h1>
+            <h2>shop page</h2>
+            <a href="#viewlive" style="border-bottom-width: 0px;border-bottom-style: solid;margin-bottom: 10px;">🌐 View
+                Live</a>
+            <a href="#photo">📷 Free Photo Assets</a>
+            <a href="#open">⭐ Open Source Icons</a>
+        </div>
+        <div class="item2">
+            <h2>Recreat this to learn:</h2>
+            <ul>
+                <li>Hero image slider.</li>
+                <li>Image hover transitions</li>
+                <li>Dropdown menu</li>
+                <li>Menu hide/appear on scroll</li>
+            </ul>
+        </div>
+        <div class="item2 colcontainer">
+            <div class="colcircle">
+                <h2>Color Palette:</h2>
+            </div>
+            <div class="colcircle">&#9899 #9899</div>
+            <div class="colcircle">&#128308 #128308</div>
+            <div class="colcircle">&#128309 #128309</div>
+            <div class="colcircle">&#9898 #9898 </div>
+            <div class="colcircle">&#9899 #9899</div>
+        </div>
+        <div class="item2 box3">
+            <h2>Recommended Course:</h2>
+            <p style="padding: 15px;">Frontend Masters offers a completely free <a href="#startcss">"Getting Started
+                    With CSS"</a>course.</p>
+            <button style="margin-bottom: 7px">Learn more</button>
+        </div>
+        <div class="item2">
+            <h2>Resources:</h2>
+            <ul style="list-style-type: none;">
+                <li><a href="#slideshow">How To - Slideshow</a></li>
+                <li><a href="#change">Change image on hover</a></li>
+                <li><a href="#complete">A Complete Guide to Grid</a></li>
+                <li><a href="#guide">A Complete Guide to Flexbox</a></li>
+            </ul>
+
+        </div>
+        <div class="item2 container2">
+            <div class="box4">
+                <h2>Up for a challenge?</h2>
+                <p>Build the slide-out panel when clicking the shopping cart in the menu</p>
+            </div>
+            <div class="box4">
+                <h2>
+                    Too easy?
+                </h2>
+                <p>
+                    Create a hero image slider that changes the image after X amount of seconds.
+                </p>
+            </div>
+            <div class="box4">
+                <h2>Too hard?</h2>
+                <p>That's ok!</p>
+                <a href="#view">View other projects</a>
+            </div>
+        </div>
+        <div class="item2">
+            <div class="slideshow-container">
+                <div class="mySlides ">
+                    <img src="flowers.jpg" style="width:100%">
+                </div>
+                <div class="mySlides ">
+                    <img src="road.jpg" style="width:100%">
+                </div>
+                <div class="mySlides ">                 
+                    <img src="tree.jpg" style="width:100%">
+                </div>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p style="text-align: center;">Frontend Practice-&copy; 2023</p>
+        <ul class="foot">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#project">Project</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            //   dots[slideIndex-1].className += " active";
+            const list = dots[slideIndex - 1].classList;
+            list.add("active");
+        }
+        function nightmode() {
+            document.body.style.backgroundColor = "black"
+            document.body.style.color = "white"
+            var links = document.getElementsByTagName("a");
+            for (var i = 0; i < links.length; i++) {
+                // if (links[i].href) {
+                    links[i].style.color = "white";
+                // }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
